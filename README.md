@@ -1,6 +1,6 @@
 # Nodepop API
 
-** Práctica JS/Node.js/MongoDB - KeepCoding **
+**Práctica JS/Node.js/MongoDB - KeepCoding**
 
 Backend para dar soporte a una aplicación de venta de artículos de segunda mano para plataformas IOS o Android.
 
