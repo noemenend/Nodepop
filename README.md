@@ -1,6 +1,6 @@
 # Nodepop API
 
-**Práctica JS/Node.js/MongoDB - KeepCoding **
+** Práctica JS/Node.js/MongoDB - KeepCoding **
 
 Backend para dar soporte a una aplicación de venta de artículos de segunda mano para plataformas IOS o Android.
 
@@ -14,7 +14,7 @@ Requisitos de instalación:
 
 ### Instalación
 
-	$ git clone https://github.com/enanibus/nodepop.git
+	$ git clone https://github.com/noemenend/Nodepop.git
 	$ cd nodepop
 	$ npm install
       
@@ -31,4 +31,4 @@ Requisitos de instalación:
       
 ## Autor
 
-&copy; 2018 noelia Muñiz Menéndez.
+&copy; 2018 Noelia Muñiz Menéndez.
