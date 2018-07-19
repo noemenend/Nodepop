@@ -16,7 +16,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//Ficheros estaticos
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Imágenes de los anuncios (estáticos)
+app.use('/images/anuncios', express.static(path.join(__dirname, 'public/images')));
+
+//Rutas de la API 
 
 
 //Middlewares
