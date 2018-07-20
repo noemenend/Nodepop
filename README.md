@@ -1,34 +1,48 @@
 # Nodepop API
 
-**Práctica JS/Node.js/MongoDB - KeepCoding**
+**Practical Exercise JS/Node.js/MongoDB - KeepCoding Bootcamp Web IV**
 
-Backend para dar soporte a una aplicación de venta de artículos de segunda mano para plataformas IOS o Android.
+Backend to support an application for selling second-hand items on IOS or Android platforms.
 
-## Instrucciones
+## Installation
 
-Requisitos de instalación:
+### Minimum Requirements:
 
 - Node >= 4.0
 - MongoDB
 - Git
 
-### Instalación
-
+### Getting the application
+ ```Bash
 	$ git clone https://github.com/noemenend/Nodepop.git
 	$ cd nodepop
 	$ npm install
-      
-### Arrancar servidor
+```
+
+### Previously to running application
+
+You can install the default data:
+```Bash
+	$ npm installDB
+```
+
+### Running the application
+
+- On Development mode:
+```Bash
+	$ npm run dev
+```
+
+- On Production mode:
+```Bash
 	$ npm start
-      
-### Arrancar la base de datos
-	$ npm run installDB
+```
 
 ## Changelog
 
 * 0.0.1: start
 
-      
-## Autor
+
+## Author
 
 &copy; 2018 Noelia Muñiz Menéndez.
