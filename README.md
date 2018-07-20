@@ -1,5 +1,8 @@
 # Nodepop API
 
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYrnMZSLhIMSnI-eY54gTfYjgIolAITNrP1rnugcd0RvxH_4FjIg)
+
 **Practical Exercise JS/Node.js/MongoDB - KeepCoding Bootcamp Web IV**
 
 Backend to support an application for selling second-hand items on IOS or Android platforms.
