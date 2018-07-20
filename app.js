@@ -17,10 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//Ficheros estaticos
+//Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Imágenes de los anuncios (estáticos)
+//Adverts images
 app.use('/images/anuncios', express.static(path.join(__dirname, 'public/images')));
 
 
@@ -30,7 +30,7 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 
-//Rutas de la API 
+//API ROUTES
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

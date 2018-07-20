@@ -1,14 +1,15 @@
 /**
- * Modelo Anuncio
+ * Advert mongoose model
  * 
- * Creado por Noelia Muñiz Menéndez 2018
+ * Created by Noelia Muñiz Menéndez 2018
  */
 
 'use strict';
 
 const mongoose = require('mongoose');
 
-var anuncioSchema = mongoose.Schema({
+
+var AdvertSchema = mongoose.Schema({
     nombre: String,
     venta: Boolean,
     precio: Number,
@@ -17,4 +18,4 @@ var anuncioSchema = mongoose.Schema({
 });
 
 
-let Anuncio = mongoose.model('Anuncio', anuncioSchema);
+let Advert = mongoose.model('Advert', AdvertSchema);
