@@ -7,6 +7,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const configuration = require('./../config/local_config');
 
 
 var AdvertSchema = mongoose.Schema({
@@ -17,5 +18,11 @@ var AdvertSchema = mongoose.Schema({
     tags: [String]
 });
 
+//List of allowed tags
+AdvertSchema.statics.allowedTags = function() {
+    return configuration.tags;
+}
 
-let Advert = mongoose.model('Advert', AdvertSchema);
+
+
+let Advert = mongoose.model('Advertisement', AdvertSchema);

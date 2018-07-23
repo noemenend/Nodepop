@@ -4,9 +4,11 @@
     "private": true,
     "scripts": {
         "start": "cross-env NODE_ENV=production DEBUG=nodepop:* PORT=3001 node ./bin/www",
-        "dev": "cross-env DEBUG=nodepop:* nodemon ./bin/www"
+        "dev": "cross-env DEBUG=nodepop:* nodemon ./bin/www",
+        "installDB": "nodemon ./bin/install_db.js"
     },
     "dependencies": {
+        "async": "^2.6.1",
         "cookie-parser": "~1.4.3",
         "debug": "~2.6.9",
         "ejs": "~2.5.7",
