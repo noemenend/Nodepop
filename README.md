@@ -22,7 +22,7 @@ Backend to support an application for selling second-hand items on IOS or Androi
 	$ npm install
 ```
 
-### Previously to running application
+### Previous to running application
 
 You can install the default data:
 ```Bash
@@ -40,6 +40,8 @@ You can install the default data:
 ```Bash
 	$ npm start
 ```
+
+Once running, copy .env.example to .env and review the values.
 
 ## Changelog
 

@@ -1,5 +1,5 @@
 /**
- * Advert mongoose model
+ * Advertisement mongoose model
  * 
  * Created by Noelia Muñiz Menéndez 2018
  */
@@ -7,9 +7,10 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const configuration = require('./../config/local_config');
 
 
-var AdvertSchema = mongoose.Schema({
+var AdvertisementSchema = mongoose.Schema({
     nombre: String,
     venta: Boolean,
     precio: Number,
@@ -18,4 +19,4 @@ var AdvertSchema = mongoose.Schema({
 });
 
 
-let Advert = mongoose.model('Advert', AdvertSchema);
+let Advertisement = mongoose.model('Advertisement', AdvertisementSchema);
