@@ -5,8 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
+const { isAPI } = require('./lib/utils');
+
 
 var app = express();
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +28,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Adverts images
 app.use('/images/anuncios', express.static(path.join(__dirname, 'public/images')));
 
+//Open the database connection.
+require('./lib/connectMongoose');
+
+//Loads the model definitions
+require('./models/Advertisement');
+
+//API ROUTES
+app.use('/api/v1/advertisements', require('./routes/api/v1/advertisements'));
 
 
 //Middlewares
@@ -30,7 +43,6 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 
-//API ROUTES
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,6 +51,20 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+    // error de validación
+    if (err.array) {
+        err.status = 422;
+        const errorInfo = err.array({ onlyFirstError: true })[0];
+        err.message = isAPI(req) ? { message: 'Not valid', errors: err.mapped() } :
+            `Not valid - ${errorInfo.param} ${errorInfo.msg}`;
+    }
+
+    res.status(err.status || 500);
+
+    if (isAPI(req)) {
+        res.json({ success: false, error: err.message });
+        return;
+    }
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};

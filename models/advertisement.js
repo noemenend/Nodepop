@@ -1,5 +1,5 @@
 /**
- * Advert mongoose model
+ * Advertisement mongoose model
  * 
  * Created by Noelia Muñiz Menéndez 2018
  */
@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const configuration = require('./../config/local_config');
 
 
-var AdvertSchema = mongoose.Schema({
+var AdvertisementSchema = mongoose.Schema({
     nombre: String,
     venta: Boolean,
     precio: Number,
@@ -18,11 +18,5 @@ var AdvertSchema = mongoose.Schema({
     tags: [String]
 });
 
-//List of allowed tags
-AdvertSchema.statics.allowedTags = function() {
-    return configuration.tags;
-}
 
-
-
-let Advert = mongoose.model('Advertisement', AdvertSchema);
+let Advertisement = mongoose.model('Advertisement', AdvertisementSchema);
