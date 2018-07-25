@@ -29,7 +29,7 @@ You can install the default data:
 	$ npm installDB
 ```
 
-### Running the application
+### Run the application
 
 - On Development mode:
 ```Bash

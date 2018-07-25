@@ -1,77 +1,77 @@
 {
     "advertisements": [{
             "nombre": "Bicicleta Vintage",
-            "venta": "true",
+            "venta": true,
             "precio": 270.24,
             "foto": "bicycle.jpg",
             "tags": ["lifestyle"]
         },
         {
             "nombre": "Hamaca Jardín",
-            "venta": "true",
+            "venta": true,
             "precio": 50.20,
             "foto": "hamaca.jpeg",
             "tags": ["lifestyle"]
         },
         {
             "nombre": "iPhone 6",
-            "venta": "false",
+            "venta": false,
             "precio": 80.76,
             "foto": "iphone6.jpeg",
             "tags": ["work", "mobile"]
         },
         {
             "nombre": "Funda Móvil iPhone",
-            "venta": "true",
+            "venta": true,
             "precio": 9.99,
             "foto": "iphonecase.jpeg",
             "tags": ["lifestyle", "work", "mobile"]
         },
         {
             "nombre": "Pórtatil Acer Blanco",
-            "venta": "true",
+            "venta": true,
             "precio": 215.90,
             "foto": "laptop.jpg",
             "tags": ["work"]
         },
         {
             "nombre": "Funda Pórtatil Negra",
-            "venta": "true",
+            "venta": true,
             "precio": 15.25,
             "foto": "laptopbag.jpg",
             "tags": ["work"]
         },
         {
             "nombre": "Motocicleta Scooter Roja",
-            "venta": "true",
+            "venta": true,
             "precio": 567.45,
             "foto": "moto.jpeg",
             "tags": ["lifestyle", "motor"]
         },
         {
             "nombre": "Cámara Dígital Nixon",
-            "venta": "false",
+            "venta": false,
             "precio": 130.50,
             "foto": "photocamera.jpeg",
             "tags": ["lifestyle", "work"]
         },
         {
             "nombre": "Tabla Surf",
-            "venta": "false",
+            "venta": false,
             "precio": 105.40,
             "foto": "surfboard.jpg",
             "tags": ["lifestyle"]
         },
         {
             "nombre": "Paragüas Rojo",
-            "venta": "true",
+            "venta": true,
             "precio": 12.60,
             "foto": "umbrella.jpeg",
             "tags": ["lifestyle"]
         },
         {
             "nombre": "Volkswagen van",
-            "venta": "false",
+            "venta": false,
             "precio": 4500,
             "foto": "van.jpeg",
             "tags": ["lifestyle", "motor"]

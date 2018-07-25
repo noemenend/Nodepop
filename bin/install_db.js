@@ -9,6 +9,7 @@
 const mongoose = require('mongoose');
 const readLine = require('readline');
 const path = require('path');
+const fs = require('fs');
 
 //Load the models
 const db = require('../lib/connectMongoose');

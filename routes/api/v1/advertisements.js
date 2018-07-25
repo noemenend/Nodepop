@@ -7,6 +7,7 @@
 //Load the Express and mongoose modules
 const express = require('express');
 const mongoose = require('mongoose');
+const filter = require('../../../lib/filters');
 
 
 //Obtain the router and advertisement model
@@ -21,11 +22,12 @@ const Advertisement = mongoose.model('Advertisement');
  * Returns the adverts list which fullfill the filter conditions make in the request
  */
 router.get('/', async function(req, res, next) {
-    //Gets the parameters from the query string
 
     try {
-        const adverts = await Advertisement.find().exec();
-        res.json({ success: true, result: adverts });
+          //Gets the parameters from the query string
+        let criteria = filter(req);
+        const adverts = await Advertisement.find(criteria).exec();
+        res.json({ success: true, number:adverts.length, result: adverts });
     } catch (err) {
         next(err);
     }
@@ -63,7 +65,7 @@ router.post('/', async function(req, res, next) {
 
 router.get('/tags', (req, res, next) => {
     const tags = process.env.TAGS_ARRAY;
-    res.json({ success: true, allowedTags: tags });
+    res.json({ success: true, number: tags.length, allowedTags: tags });
 });
 
 
