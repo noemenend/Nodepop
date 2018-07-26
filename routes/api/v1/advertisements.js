@@ -24,10 +24,14 @@ const Advertisement = mongoose.model('Advertisement');
 router.get('/', async function(req, res, next) {
 
     try {
-          //Gets the parameters from the query string
+        //Gets the parameters from the query string
+        let start = parseInt(req.query.start) || 0;
+        let limit = parseInt(req.query.limit) || 0;
+        let sort = req.query.sort || null;
+        //Get the filter criterias and process them
         let criteria = filter(req);
-        const adverts = await Advertisement.find(criteria).exec();
-        res.json({ success: true, number:adverts.length, result: adverts });
+        const adverts = await Advertisement.find(criteria).skip(start).limit(limit).sort(sort).exec();
+        res.json({ success: true, number: adverts.length, result: adverts });
     } catch (err) {
         next(err);
     }
