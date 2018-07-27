@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 
 
-const { isAPI } = require('./lib/utils')
+const utils = require('./lib/utils')
 
 
 var app = express()
@@ -61,7 +61,7 @@ app.use(function(err, req, res) {
 
 	res.status(err.status || 500)
 
-	if (isAPI(req)) {
+	if (utils.isAPI(req)) {
 		res.json({ success: false, error: err.message })
 		return
 	}

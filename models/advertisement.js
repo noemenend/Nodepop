@@ -6,7 +6,7 @@
 
 'use strict'
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 
 var AdvertisementSchema = mongoose.Schema({
@@ -15,9 +15,9 @@ var AdvertisementSchema = mongoose.Schema({
 	precio: Number,
 	foto: String,
 	tags: [String]
-})
+});
 
 
-let Advertisement = mongoose.model('Advertisement', AdvertisementSchema)
+let Advertisement = mongoose.model('Advertisement', AdvertisementSchema);
 
-module.exports = Advertisement
+module.exports = Advertisement;

@@ -6,7 +6,7 @@
         "start": "cross-env NODE_ENV=production DEBUG=nodepop:* PORT=3001 node ./bin/www",
         "dev": "cross-env DEBUG=nodepop:* nodemon ./bin/www",
         "installDB": "node ./bin/install_db.js",
-        "eslint": "./node_modules/.bin/eslint --fix --ignore-path .gitignore ."
+        "eslint": "./node_modules/.bin/eslint --fix --ignore-path .gitignore . || true"
     },
     "dependencies": {
         "async": "^2.6.1",

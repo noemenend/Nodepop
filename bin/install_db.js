@@ -6,55 +6,53 @@
 'use strict'
 
 //Load the modules.
-const mongoose = require('mongoose')
-const readLine = require('readline')
-const path = require('path')
-const fs = require('fs')
+const readLine = require('readline');
+const Advertisement = require('../models/Advertisement');
+const utils = require('../lib/utils');
 
-//Load the models
-const db = require('../lib/connectMongoose')
+//Database connection
+const db = require('../lib/connectMongoose');
 
-//Open the database connection
-db.once('open', function() {
+//Advertisements to load.
+const ads = require('../data/advertisements.json').advertisements;
 
-	//Prepear for reading the console input
-	const rline = readLine.createInterface({
-		input: process.stdin,
-		output: process.stdout
-	})
+/**
+ * Opens the database collection, if no error ask to the user
+ * for empty the database and load a list of initial adverts.
+ */
+db.once('open', async() => {
 
-	//Ask user if she/he wants to delete the database.
-	rline.question('Are you sure you want to empty the database?(No)', function(answer) {
-		rline.close()
-		if (answer.toLowerCase() === 'yes') {
-			//Clean the database and load the advertisement.json with the initial data.
-			(async function() {
-				try {
-					let result = await db.collection('advertisements').deleteMany({})
-					console.log('Number of adverts deleted ', result.deletedCount)
+	try {
+		const answer = await utils.askUser('Are you sure you want to empty the database?(No)');
 
-					//Inserts the json advertisements into the Advertisement collection
-					let fileJSON = path.join(__dirname, './../config/advertisements.json')
-					const adjson = require(fileJSON)
-					let resultinsert = await db.collection('advertisements').insertMany(adjson.advertisements)
-					console.log('Number of adverts inserted ', resultinsert.insertedCount)
+		if(answer.toLowerCase () !== 'yes') {
+            console.log('Script aborted');
+            process.exit(0);
+        }
 
-					//Close the conection and finalize the script
-					db.close()
-					process.exit(0)
-				} catch (err) {
-					console.log('There was an error', err)
-					db.close()
-					process.exit(1)
-				}
+		await initAdverts(ads);
+		
+	} catch (err) {
+		console.log('There was an error', err);
+		process.exit(1);
+	} finally {
+		db.close();
+		process.exit(0);
+	}
+	
+});
 
-			})()
+/**
+ * Function that initialises the Advertisemts collection
+ * @param {Advertisement} ads 
+ */
+async function initAdverts(ads) {
 
+	//Deletes all the documents from the collection
+	const deletedAds = await Advertisement.deleteMany();
+	console.log(`Deleted ${deletedAds.n} adverts`);
 
-
-		} else {
-			console.log('Database installation aborted!')
-			return process.exit(0)
-		}
-	})
-})
+	//Inserts the new ads into the collection
+	const insertedAds = await Advertisement.insertMany(ads);
+	console.log(`Inserted ${insertedAds.length} adverts`);
+}
