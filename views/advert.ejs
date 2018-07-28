@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+        <h1><%=title%></h1>
+    
+        <div class="wrapper">
+       
+            <div class="box-header"><%=subtitle%></div>
+            <div class="box-header"></div> 
+        <%if(result.length>0) {
+         result.forEach(function(advert){%>       
+            <!-- Table Row -->
+            <div class="box-row"><img width="300" height="250" src=<%=advert.foto%> ></div>
+            <div class="box-row">
+                <li><span>Nombre:</span><%=advert.nombre%></li>
+                <li><span>Venta:</span><%=advert.venta%></li>
+                <li><span>Precio:</span><%=advert.precio%>$<br></li>
+                <li><span>Etiquetas:</span> <span id="etiqueta"><%=advert.tags%></span></li>
+            </div>
+         
+        <%})} else {%>
+            <div class="sinart">No se encontraron artículos que mostrar.</div>
+        <%}%>
+        </div>
+    
+
+
+</body>
+
+</html>
