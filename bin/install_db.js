@@ -3,7 +3,7 @@
  * 
  * Created by Noelia Muñiz Menéndez on 23/07/2018
  */
-'use strict'
+'use strict';
 
 //Load the modules.
 const readLine = require('readline');
@@ -55,4 +55,4 @@ async function initAdverts(ads) {
 	//Inserts the new ads into the collection
 	const insertedAds = await Advertisement.insertMany(ads);
 	console.log(`Inserted ${insertedAds.length} adverts`);
-}
+};

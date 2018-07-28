@@ -10,6 +10,8 @@ const utils = require('./lib/utils')
 
 var app = express()
 
+const api_routes= require('./routes/api/v1/advertisements');
+const adverts_routes = require('./routes/adverts');
 
 
 
@@ -35,13 +37,14 @@ require('./lib/connectMongoose')
 require('./models/Advertisement')
 
 //API ROUTES
-app.use('/api/v1/advertisements', require('./routes/api/v1/advertisements'))
+app.use('/api/v1/advertisements', api_routes);
+app.use('/adverts', adverts_routes);
+
 
 
 //Middlewares
 app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))
-
 
 
 // catch 404 and forward to error handler
