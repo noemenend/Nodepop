@@ -44,7 +44,7 @@ You can install the default data:
 Once running, copy .env.example to .env and review the values.
 
 ## Detailed Documentation
-For more information see the project [wiki] (https://github.com/enanibus/nodepop/wiki) 
+For more information see the project [wiki] (https://github.com/noemenend/Nodepop/wiki) 
 
 ## API Methods
 The API provides the following services:
