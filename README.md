@@ -43,6 +43,16 @@ You can install the default data:
 
 Once running, copy .env.example to .env and review the values.
 
+## Detailed Documentation
+For more information see the project [wiki] (https://github.com/enanibus/nodepop/wiki) 
+
+## API Methods
+The API provides the following services:
+
+- **List of advertisements** (paginated, with search filters)
+- **Store a new advertisment**
+- **List of existing tags** (advertisement's categories)
+
 ## Changelog
 
 * 0.0.1: start
