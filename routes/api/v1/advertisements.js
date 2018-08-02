@@ -13,6 +13,7 @@ const filter = require('../../../lib/filters');
 //Obtain the router and advertisement model
 const router = express.Router();
 const Advertisement = require('../../../models/Advertisement');
+const upload=require('../../../lib/upload');
 
 
 /**
@@ -51,7 +52,7 @@ router.get('/', async (req, res, next)=> {
  * 
  */
 
-router.post('/', async (req, res, next)=> {
+router.post('/', upload.single('foto'), async (req, res, next)=> {
 	try {
 		const advertData = req.body;
 
