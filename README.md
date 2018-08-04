@@ -49,7 +49,7 @@ For more information see the project [wiki] (https://github.com/noemenend/Nodepo
 ## API Methods
 The API provides the following services:
 
-- **List of advertisements** (paginated, with search filters)
+- [**List of advertisements** (paginated, with search filters)](https://github.com/noemenend/Nodepop/wiki/List-of-Advertisements)
 - **Store a new advertisment**
 - **List of existing tags** (advertisement's categories)
 
