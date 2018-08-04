@@ -25,7 +25,7 @@ const { check, validationResult } = require('express-validator/check');
  * 
  * Returns the adverts list which fullfill the filter conditions make in the request
  */
-router.get('/', [check('venta').isBoolean().withMessage('venta is not a boolean value'),
+router.get('/', [check('venta').optional({ checkFalsy: true }).isBoolean().withMessage('venta is not a boolean value'),
 	check('start').optional({ checkFalsy: true }).isInt().withMessage('start is not an int value'),
 	check('limit').optional({ checkFalsy: true }).isInt().withMessage('limit is not an int value')], async (req, res, next) => {
 
@@ -61,7 +61,7 @@ router.get('/', [check('venta').isBoolean().withMessage('venta is not a boolean 
  * 
  */
 
-router.post('/', upload.single('foto'), async (req, res, next) => {
+router.post('/', upload.single('image'), async (req, res, next) => {
 	try {
 		const advertData = req.body;
 
