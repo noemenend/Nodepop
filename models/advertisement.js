@@ -4,7 +4,7 @@
  * Created by Noelia Muñiz Menéndez 2018
  */
 
-'use strict'
+'use strict';
 
 const mongoose = require('mongoose');
 
@@ -45,15 +45,17 @@ var AdvertisementSchema = mongoose.Schema({
  * @param {Number} limit max number of elements to show
  * @param {String} sort
  */
-AdvertisementSchema.statics.list = function (filter, skip, limit, sort) {
-	const query = Advertisement.find(filter);
-	query.skip(skip);
+AdvertisementSchema.statics.list = function (filter, start, limit, sort) {
+	const query = Advertisement.find(filter).skip(start);
 	query.limit(limit);
 	query.sort(sort);
 	return query.exec();
 };
 
-
+/**
+ * 
+ * @param {*} requestSort 
+ */
 AdvertisementSchema.statics.listTags = function (requestSort) {
 	const unwind = { $unwind: '$tags' };
 	const group = {

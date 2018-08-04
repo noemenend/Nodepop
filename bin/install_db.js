@@ -6,7 +6,6 @@
 'use strict';
 
 //Load the modules.
-const readLine = require('readline');
 const Advertisement = require('../models/Advertisement');
 const utils = require('../lib/utils');
 
@@ -20,25 +19,24 @@ const ads = require('../data/advertisements.json').advertisements;
  * Opens the database collection, if no error ask to the user
  * for empty the database and load a list of initial adverts.
  */
-db.once('open', async() => {
+db.once('open', async () => {
 
 	try {
 		const answer = await utils.askUser('Are you sure you want to empty the database?(No)');
 
 		if(answer.toLowerCase () !== 'yes') {
-            console.log('Script aborted');
-            process.exit(0);
-        }
+			console.log('Script aborted');
+			process.exit(0);
+		}
 
 		await initAdverts(ads);
+		
+		await createIndexes();
 		
 	} catch (err) {
 		console.log('There was an error', err);
 		process.exit(1);
-	} finally {
-		db.close();
-		process.exit(0);
-	}
+	} 
 	
 });
 
@@ -55,4 +53,11 @@ async function initAdverts(ads) {
 	//Inserts the new ads into the collection
 	const insertedAds = await Advertisement.insertMany(ads);
 	console.log(`Inserted ${insertedAds.length} adverts`);
-};
+}
+
+/**
+ * Creates indexes by nombre and precio
+ */
+async function createIndexes() {
+	Advertisement.ensureIndexes({'nombre' : 1,'precio':-1});
+}
