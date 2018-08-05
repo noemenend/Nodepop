@@ -26,7 +26,7 @@ Backend to support an application for selling second-hand items on IOS or Androi
 
 You can install the default data:
 ```Bash
-	$ npm installDB
+	$ npm run installDB
 ```
 
 ### Run the application
@@ -42,6 +42,11 @@ You can install the default data:
 ```
 
 Once running, copy .env.example to .env and review the values.
+
+## EsLint
+```Bash
+	$ npm run eslint
+```
 
 ## Detailed Documentation
 For more information see the project [wiki] (https://github.com/noemenend/Nodepop/wiki) 
