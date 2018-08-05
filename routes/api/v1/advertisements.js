@@ -27,7 +27,8 @@ const { check, validationResult } = require('express-validator/check');
  */
 router.get('/', [check('venta').optional({ checkFalsy: true }).isBoolean().withMessage('venta is not a boolean value'),
 	check('start').optional({ checkFalsy: true }).isInt().withMessage('start is not an int value'),
-	check('limit').optional({ checkFalsy: true }).isInt().withMessage('limit is not an int value')], async (req, res, next) => {
+	check('limit').optional({ checkFalsy: true }).isInt().withMessage('limit is not an int value'),
+	check('tag').optional({checkFalsy: true}).isIn(['mobile','work','lifestyle','motor']).withMessage('The tag parameter must belongs to [mobile,motor,lifestyle,work]')], async (req, res, next) => {
 
 	try {
 		const errors = validationResult(req);

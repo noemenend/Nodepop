@@ -36,6 +36,9 @@ db.once('open', async () => {
 	} catch (err) {
 		console.log('There was an error', err);
 		process.exit(1);
+	} finally {
+		db.close();
+		process.exit(0);
 	} 
 	
 });
