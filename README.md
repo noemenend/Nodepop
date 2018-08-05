@@ -26,7 +26,7 @@ Backend to support an application for selling second-hand items on IOS or Androi
 
 You can install the default data:
 ```Bash
-	$ npm installDB
+	$ npm run installDB
 ```
 
 ### Run the application
@@ -43,15 +43,20 @@ You can install the default data:
 
 Once running, copy .env.example to .env and review the values.
 
+## EsLint
+```Bash
+	$ npm run eslint
+```
+
 ## Detailed Documentation
 For more information see the project [wiki] (https://github.com/noemenend/Nodepop/wiki) 
 
 ## API Methods
 The API provides the following services:
 
-- **List of advertisements** (paginated, with search filters)
-- **Store a new advertisment**
-- **List of existing tags** (advertisement's categories)
+- [**List of advertisements** (paginated, with search filters)](https://github.com/noemenend/Nodepop/wiki/List-of-Advertisements)
+- [**Create New Advertisements**](https://github.com/noemenend/Nodepop/wiki/Create-New-Advertisements)
+- [**List of existing tags** (advertisement's categories)](https://github.com/noemenend/Nodepop/wiki/List-of-existing-tags)
 
 ## Changelog
 
