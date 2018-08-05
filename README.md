@@ -48,6 +48,15 @@ Once running, copy .env.example to .env and review the values.
 	$ npm run eslint
 ```
 
+## Routes
+
+**Index route**: http://localhost:3000
+
+**Advertisements list page**: http://localhost:3000/adverts/
+
+**API basic route**: http://localhost:3000/api/v1/advertisements
+
+
 ## Detailed Documentation
 For more information see the project [wiki] (https://github.com/noemenend/Nodepop/wiki) 
 
