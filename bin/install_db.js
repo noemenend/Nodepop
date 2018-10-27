@@ -7,6 +7,7 @@
 
 //Load the modules.
 const Advertisement = require('../models/Advertisement');
+const User = require('../models/User');
 const utils = require('../lib/utils');
 
 //Database connection
@@ -14,6 +15,8 @@ const db = require('../lib/connectMongoose');
 
 //Advertisements to load.
 const ads = require('../data/advertisements.json').advertisements;
+//Users to load
+const users = require('../data/Users.json').users;
 
 /**
  * Opens the database collection, if no error ask to the user
@@ -30,6 +33,8 @@ db.once('open', async () => {
 		}
 
 		await initAdverts(ads);
+
+		await initUsers(users);
 		
 		await createIndexes();
 		
@@ -56,6 +61,17 @@ async function initAdverts(ads) {
 	//Inserts the new ads into the collection
 	const insertedAds = await Advertisement.insertMany(ads);
 	console.log(`Inserted ${insertedAds.length} adverts`);
+}
+
+async function initUsers(users) {
+
+	//Deletes all the documents from the collection
+	const deleteUsr= await User.deleteMany();
+	console.log(`Deleted ${deleteUsr.n} users`);
+
+	//Inserts the new users into the collection
+	const insertedUsr = await User.insertMany(users);
+	console.log(`Inserted ${insertedUsr.length} users`);
 }
 
 /**
