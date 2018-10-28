@@ -69,6 +69,14 @@ async function initUsers(users) {
 	const deleteUsr= await User.deleteMany();
 	console.log(`Deleted ${deleteUsr.n} users`);
 
+	
+	// hacer hash de las passwords
+	// usuarios.forEach( async usuario => { --> no usar .forEach con async/await
+	for (let i = 0; i < users.length; i++) {
+		users[i].password = await User.hashPassword(users[i].password);
+	}
+
+
 	//Inserts the new users into the collection
 	const insertedUsr = await User.insertMany(users);
 	console.log(`Inserted ${insertedUsr.length} users`);

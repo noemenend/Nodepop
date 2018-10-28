@@ -4,6 +4,10 @@ const express = require('express');
 const router = express.Router();
 const filter=require('../lib/filters');
 const Advertisement= require('../models/Advertisement');
+const sessionAuth = require('../lib/sessionAuth');
+
+// Todas las llamadas a este router requieren autenticación
+router.use(sessionAuth());
 
 
 /* GET home page. */

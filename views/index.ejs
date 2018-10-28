@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
+<% include _header %>
+  
+      <section class="bg-primary text-white mb-0">
+        <div class="container">
+          <h2 class="text-center text-uppercase text-white">SHOP API</h2>
+          <hr class="star-light mb-5">
+          <div class="row">
+            <div class="col-lg-4 ml-auto">
+              <p class="lead">Nodepop API is a free api rest for selling second-hand items on IOS or Android platforms.</p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+              <p class="lead">
+                This api is built in NodeJS, Express and MongoDB.<br/>
+                You can see our documentation in <a class="link-nodepop" href="https://github.com/noemenend/Nodepop/wiki">Github</a>
+                </p>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="https://github.com/noemenend/Nodepop">
+              <i class="fas fa-download mr-2"></i>
+              Download Now!
+            </a>
+          </div>
+        </div>
+      </section>
+  
 
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta charset="UTF-8">
-    <title>
-        <%= title %>
-    </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    
-</head>
-
-<body>
-        <p id="linkarticulo"><a href=<%= urlTienda %>> >>Link to second-hand items store</a></p>
-    <xmp theme="united" style="display:none;">
-        <%= readme %>
-    </xmp>
-    <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
- 
-
-</body>
-
-</html>
+<% include _footer %>
