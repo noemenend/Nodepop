@@ -13,6 +13,15 @@ userSchema.statics.hashPassword = function(plainPassword) {
   return bcrypt.hash(plainPassword, 10);
 }
 
+userSchema.methods.comparePassword = function(claveToCheck, hash, cb) {
+  bcrypt.compare(claveToCheck, hash, function(err, isMatch) {
+      if (err) {
+          return cb(err);
+      }
+      cb(null, isMatch);
+  });
+};
+
 const User = mongoose.model('User',userSchema);
 
 module.exports = User;

@@ -15,6 +15,10 @@ const Advertisement = require('../../../models/Advertisement');
 const upload = require('../../../lib/upload');
 
 const { check, validationResult } = require('express-validator/check');
+const jwtAuth = require('../../../lib/jwtAuth');
+
+// Protegemos todo el middleware con JWT Auth
+router.use(jwtAuth());
 
 
 
@@ -91,10 +95,5 @@ router.get('/tags', async (req, res, next) => {
 	}
 });
 
-router.get('/authenticate', (req,res,next) => {
-	res.locals.email = process.env.NODE_ENV === 'development' ? 'admin@example.com' : '';
-	res.locals.error = '';
-	res.render('login');
-});
 
 module.exports = router;

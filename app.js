@@ -41,16 +41,14 @@ require('./models/User');
 // Variables globales de template
 app.locals.title = 'Nodepop API';
 
+
 //API ROUTES
 app.use('/api/v1/advertisements', api_routes);
+app.use('/api/v1/users', require('./routes/api/v1/users'));
 
 
 
-// auth helper middleware - dar acceso a sesión desde las vistas
-app.use((req, res, next) => {
-	res.locals.session = req.session;
-	next();
-});
+
   
 //Middlewares web application
 const loginController=require('./routes/loginController');
@@ -63,6 +61,14 @@ app.use(session({
 	saveUninitialized:true,
 	cookie:{maxAge: 1* 24 *60 *60 * 1000 } // a los 2 dias de inactividad caduca
 }));
+
+// auth helper middleware - dar acceso a sesión desde las vistas
+app.use((req, res, next) => {
+	console.log(req.session);
+	console.log(req.session.authUser);
+	app.locals.session = req.session;
+	next();
+});
 
 app.use('/', require('./routes/index'));
 app.use('/adverts', adverts_routes);
