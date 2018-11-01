@@ -2,58 +2,6 @@
     color:#fff;
 }
 
-section {
+section, .nodepop-adverts {
     padding-top:10rem;
 }
-
-
-.wrapper {
-    display: grid;
-    /*grid-template-columns: repeat(2, auto);*/
-    grid-template-columns: 2fr 4fr;
-    /*max-width:  800px;*/
-    width:auto;
-  }
-  
-  .box-row{
-    background-color:rgb(228, 222, 222);
-    color:  #444;
-    border-radius: 3px;
-    padding: 20px;
-    font-size: 100%;
-    
-  }
-  
-  
-  
-  
-  .box-header{
-    background-color:rgb(45, 45, 138);
-    color: #fff;
-    border-radius: 3px;
-    padding: 20px;
-    font-size: 120%;
-    text-transform: uppercase;
-  }
-  
-  span{
-    font-weight: bold;
-  }
-  
-  #etiqueta{
-    color: rgb(45, 45, 138);
-  }
-  
-  li{
-    list-style:none;
-    padding:0.3rem;
-  }
-  
-  .sinart{
-    padding:0.5rem;
-  }
-  
-  #linkarticulo {
-    margin-left:2.5rem;
-  }
-  

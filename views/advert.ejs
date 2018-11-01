@@ -1,51 +1,73 @@
 <% include _header %>
 
-<div class="wrapper">
 
-    <div class="box-header">
-        <%=subtitle%>
-    </div>
-    <div class="box-header"></div>
-    <%if(result.length>0) {
-         result.forEach(function(advert){%>
-    <!-- Table Row -->
-    <div class="box-row"><img width="300" height="250" src=<%=advert.foto%> ></div>
-    <div class="box-row">
-        <li><span>Nombre:</span>
-            <%=advert.nombre%>
-        </li>
-        <li><span>Venta:</span>
-            <%=advert.venta%>
-        </li>
-        <li><span>Precio:</span>
-            <%=advert.precio%>$<br></li>
-        <li><span>Etiquetas:</span> <span id="etiqueta">
-                <%=advert.tags%></span></li>
-    </div>
+<!-- Page Content -->
+<div class="container nodepop-adverts">
 
-    <%})} else {%>
-    <div class="sinart">No se encontraron artículos que mostrar.</div>
-    <%}%>
-</div>
+        <div class="row">
+  
+          <div class="col-lg-3">
+  
+            <h1 class="my-4"><%=__('Nodepop Shop') %></h1>
+            <div class="list-group">
+              <a href="#" class="list-group-item">Category 1</a>
+              <a href="#" class="list-group-item">Category 2</a>
+              <a href="#" class="list-group-item">Category 3</a>
+            </div>
+  
+          </div>
+          <!-- /.col-lg-3 -->
+  
+          <div class="col-lg-9">
+            
+            
+  
+            <div class="row nodepop-adverts">
 
-<div class="row">
-
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a href="#">Item One</a>
-          </h4>
-          <h5>$24.99</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                    <%if(result.length>0) {
+                    result.forEach(function(advert){%>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="<%=advert.foto%>" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">
+                                        <%=advert.nombre%></a>
+                                </h4>
+                                <h5>
+                                    <%=advert.precio%>$</h5>
+                                <% if (advert.venta) { %>
+                                <p class="card-text">
+                                    <%= __('Looking for this item') %>
+                                </p>
+                                <% } else { %>
+                                <p class="card-text">
+                                    <%= __('This item is for selling') %>
+                                </p>
+                                <%} %>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <%=advert.tags%></small>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+                    <%})} else {%>
+                    <div class="card-tex">No se encontraron artículos que mostrar.</div>
+                    <%}%>
+                </div>
+      
+            <!-- /.row -->
+  
+          </div>
+          <!-- /.col-lg-9 -->
+  
         </div>
-        <div class="card-footer">
-          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-        </div>
+        <!-- /.row -->
+  
       </div>
-    </div>
-    </div>
-
+      <!-- /.container -->
 
 <% include _footer %>

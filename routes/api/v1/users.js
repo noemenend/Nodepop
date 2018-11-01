@@ -8,36 +8,37 @@ var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 
 router.post('/authenticate', async function (req,res,next) {
-    try {
+	try {
       
-        // recoger parámetros del cuerpo de la petición
-        const email = req.body.email;
-        const password = req.body.password;
+		// recoger parámetros del cuerpo de la petición
+		const email = req.body.email;
+		const password = req.body.password;
         
-        //buscar el usuario
-        const usuario = await Usuario.findOne({ email: email });
+		console.log(email);
+		//buscar el usuario
+		const usuario = await Usuario.findOne({email:email});
+		console.log(usuario);
+		if (!usuario || !await bcrypt.compare( password, usuario.password)) {
+			res.json({ success: false, error: 'Invalid credentials'});
+			return;
+		}
   
-        if (!usuario || !await bcrypt.compare( password, usuario.password)) {
-          res.json({ success: false, error: 'Invalid credentials'});
-          return;
-        }
+		// usuario encontrado y password ok
+		// no meter instancias de mongoose en el token!
+		jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
+			expiresIn: '2d'
+		}, (err, token) => {
+			if (err) {
+				next(err);
+				return;
+			}
+			console.log(token);
+			res.json({ success: true, token: token });
+		});
   
-        // usuario encontrado y password ok
-        // no meter instancias de mongoose en el token!
-        jwt.sign({ _id: usuario._id }, process.env.JWT_SECRET, {
-          expiresIn: '2d'
-        }, (err, token) => {
-          if (err) {
-            next(err);
-            return;
-          }
-         
-          res.json({ success: true, token: token });
-        });
-  
-      } catch(err) {
-        next(err);
-      }
+	} catch(err) {
+		next(err);
+	}
 });
 
 

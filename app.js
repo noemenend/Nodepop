@@ -28,6 +28,12 @@ app.use(cookieParser());
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Configuramos multiidioma en express
+const i18n = require('./lib/i18nConfigure')();
+app.use(i18n.init);
+
+
 //Adverts images
 app.use('/images/anuncios', express.static(path.join(__dirname, 'public/images')));
 
@@ -70,12 +76,14 @@ app.use((req, res, next) => {
 	next();
 });
 
+
 app.use('/', require('./routes/index'));
 app.use('/adverts', adverts_routes);
 //Usamos el estilo de Controladores para estructurar las rutas
 app.get('/login', loginController.index);
 app.post('/login', loginController.post);
 app.get('/logout', loginController.logout);
+app.use('/lang', require('./routes/lang'));
 
 
 // catch 404 and forward to error handler

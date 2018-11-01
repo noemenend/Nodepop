@@ -66,11 +66,12 @@ router.get('/', [check('venta').optional({ checkFalsy: true }).isBoolean().withM
  * 
  */
 
-router.post('/', upload.single('image'), async (req, res, next) => {
+router.post('/', upload.single('foto'), async (req, res, next) => {
 	try {
 		const advertData = req.body;
 
-		//Create an ad in memory
+		//Create an ad in 
+		advertData.foto= req.file.originalname;
 		const advert = new Advertisement(advertData);
 		//Store in database
 		const advertSaved = await advert.save();

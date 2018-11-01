@@ -1,0 +1,19 @@
+{
+	"Nodepop API is a free api rest for selling second-hand items on IOS or Android platforms.": "Nodepop API es un api libre para vender artículos de segunda mano en plataformas IOS o Android",
+	"This api is built in NodeJS, Express and MongoDB.": "Esta API está construida en NodeJS, Express y MongoDB.",
+	"You can see our documentation in": "Puedes consultar la documentación en ",
+	"Download Now!": "Descargala ahora!",
+	"SECOND-HAND SHOP API": "API TIENDA DE SEGUNDA MANO",
+	"Location": "Localización",
+	"Around the Web": "En la Web",
+	"About Nodepop API": "Acerca de Nodepop API",
+	"Nodepop is free to use, open source api rest created by": "Nodepop es de uso gratuito, una API Resful de código abierto creado por",
+	"Email Address": "Dirección Email",
+	"Please enter your email address.": "Por favor, introduce tu email.",
+	"Password": "Contraseña",
+	"Submit": "Enviar",
+	"Please , enter your password": "Por favor, introduce tu contraseña",
+	"This item is for selling": "Este producto está a la venta",
+	"Looking for this item": "Búscando este producto",
+	"Nodepop Shop": "Nodepop Tienda"
+}
