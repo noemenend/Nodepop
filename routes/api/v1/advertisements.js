@@ -81,10 +81,8 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
 		requester.send({
 			type: 'imageResize', // quienquiera que escuche peticiones de tipo 'convert'
 			imagePath: req.file.path,
-			originalname: req.file.originalname,
-		  }, res => {
-			console.log(res, Date.now());
-		  });
+			originalname: req.file.originalname, }, res => {
+			console.log(res, Date.now());  });
 
 		const advert = new Advertisement(advertData);
 		//Store in database
