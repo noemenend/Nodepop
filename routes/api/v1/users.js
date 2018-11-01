@@ -17,9 +17,9 @@ router.post('/authenticate', async function (req,res,next) {
 		console.log(email);
 		//buscar el usuario
 		const usuario = await Usuario.findOne({email:email});
-		console.log(usuario);
+		
 		if (!usuario || !await bcrypt.compare( password, usuario.password)) {
-			res.json({ success: false, error: 'Invalid credentials'});
+			res.json({ code: 401, message: 'Invalid credentials'});
 			return;
 		}
   
@@ -32,8 +32,7 @@ router.post('/authenticate', async function (req,res,next) {
 				next(err);
 				return;
 			}
-			console.log(token);
-			res.json({ success: true, token: token });
+			res.json({ code: 200, token: token });
 		});
   
 	} catch(err) {
