@@ -17,6 +17,8 @@ const upload = require('../../../lib/upload');
 const { check, validationResult } = require('express-validator/check');
 const jwtAuth = require('../../../lib/jwtAuth');
 
+const cote= require('cote');
+
 // Protegemos todo el middleware con JWT Auth
 router.use(jwtAuth());
 
@@ -72,6 +74,18 @@ router.post('/', upload.single('foto'), async (req, res, next) => {
 
 		//Create an ad in 
 		advertData.foto= req.file.originalname;
+
+		//Creo el thumbnail.
+		const requester = new cote.Requester({ name: 'Image Resize client' });
+
+		requester.send({
+			type: 'imageResize', // quienquiera que escuche peticiones de tipo 'convert'
+			imagePath: req.file.path,
+			originalname: req.file.originalname,
+		  }, res => {
+			console.log(res, Date.now());
+		  });
+
 		const advert = new Advertisement(advertData);
 		//Store in database
 		const advertSaved = await advert.save();
