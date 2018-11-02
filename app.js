@@ -70,8 +70,6 @@ app.use(session({
 
 // auth helper middleware - dar acceso a sesión desde las vistas
 app.use((req, res, next) => {
-	console.log(req.session);
-	console.log(req.session.authUser);
 	app.locals.session = req.session;
 	next();
 });

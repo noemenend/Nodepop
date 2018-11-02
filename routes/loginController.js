@@ -10,7 +10,7 @@ class LoginController {
 
   // GET 
   index(req, res, next) {
-    res.locals.email = process.env.NODE_ENV === 'development' ? 'admin@example.com​' : '';
+    res.locals.email = process.env.NODE_ENV === 'development' ? 'noeliamm@gmail.com​​' : '';
     res.locals.error = '';
     res.render('login');
   }
@@ -24,7 +24,7 @@ class LoginController {
  
       //buscar el usuario
       const usuario = await Usuario.findOne({ email:email });
-
+      console.log(usuario);
       if (!usuario || !await bcrypt.compare( password, usuario.password)) {
 
         res.locals.email = email;
