@@ -20,12 +20,12 @@ class LoginController {
     try {
       // recoger parámetros del cuerpo de la petición
       const email = req.body.email;
-      console.log(email);
+ 
       const password = req.body.password;
  
       //buscar el usuario
       const usuario = await Usuario.findOne({email:email});
-      console.log('Usuario' + usuario);
+
       if (!usuario || !await bcrypt.compare( password, usuario.password)) {
 
         res.locals.email = email;
