@@ -15,5 +15,9 @@
 	"Please , enter your password": "Por favor, introduce tu contraseña",
 	"This item is for selling": "Este producto está a la venta",
 	"Looking for this item": "Búscando este producto",
-	"Nodepop Shop": "Nodepop Tienda"
+	"Nodepop Shop": "Nodepop Tienda",
+	"All Items (max. 1000)": "Todos (max. 1000)",
+	"Ordered asc by price": "Ordenados por precio ascendente",
+	"Items with mobile tag": "Con tag mobile",
+	"Ordered desc by price": "Ordenados por precio descendente"
 }

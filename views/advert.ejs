@@ -8,11 +8,12 @@
   
           <div class="col-lg-3">
   
-            <h1 class="my-4"><%=__('Nodepop Shop') %></h1>
+            <h1 class="my-4"><%= __('Nodepop Shop') %></h1>
             <div class="list-group">
-              <a href="#" class="list-group-item">Category 1</a>
-              <a href="#" class="list-group-item">Category 2</a>
-              <a href="#" class="list-group-item">Category 3</a>
+              <a href="?" class="list-group-item"><%= __('All Items (max. 1000)') %></a>
+              <a href="?sort=precio" class="list-group-item"><%= __('Ordered asc by price') %></a>
+              <a href="?sort=-precio" class="list-group-item"><%= __('Ordered desc by price') %></a>
+              <a href="?tag=mobile" class="list-group-item"><%= __('Items with mobile tag') %></a>
             </div>
   
           </div>
