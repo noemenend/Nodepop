@@ -38,9 +38,10 @@ You can install the default data:
 	$ npm run installDB
 ```
 The default data loaded into the database is several adverts and a user for the API Authentication.
-	* Name:Administrador
-	* email:noeliamm@gmail.com
-	* password:1234 (This key will be stored encrypted with a hash.)
+
+   * Name:Administrador
+   * email:noeliamm@gmail.com
+   * password:1234 (This key will be stored encrypted with a hash.)
 	
 	
 ### Run the application
