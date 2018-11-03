@@ -5,7 +5,16 @@
 
 **Practical Exercise JS/Node.js/MongoDB - KeepCoding Bootcamp Web IV**
 
-Backend to support an application for selling second-hand items on IOS or Android platforms.
+Backend to support an application for selling second-hand items on IOS or Android platforms.A Mongo database will be used in which ads and registered users will be uploaded. The user registration will be carried out with json web token. Each announcement will show the following data:
+
+   * Item name
+   * If the item is posted for its sell or it is being searched for buy it
+   * Price. It will be the price of the item if it is a sale offer. In case it is a 'wanted' ad it will be the price that the 	
+     applicant would be willing to pay.
+   * Item image. 
+   * Item Tags.It may contain one or several of these four: work, lifestyle, motor and mobile.
+    
+ La API will be runned at ***localhost:3000*** and the mongo database in the ***default port (27017).***
 
 ## Installation
 
