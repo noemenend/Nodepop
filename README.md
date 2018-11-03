@@ -14,7 +14,7 @@ Backend to support an application for selling second-hand items on IOS or Androi
    * Item image. 
    * Item Tags.It may contain one or several of these four: work, lifestyle, motor and mobile.
     
- La API will be runned at ***localhost:3000*** and the mongo database in the ***default port (27017).***
+ The API will be runned at ***localhost:3000*** and the mongo database in the ***default port (27017).***
 
 ## Installation
 
@@ -57,13 +57,27 @@ Once running, copy .env.example to .env and review the values.
 	$ npm run eslint
 ```
 
-## Routes
+## Test (Supertest & Mocha)
+```Bash
+	$ npm run test
+```
 
-**Index route**: http://localhost:3000
+## Routes - Web Application
 
-**Advertisements list page**: http://localhost:3000/adverts/
+**Index route**: http://localhost:3000 (Home Page)
+
+**Login Route**: http://localhost:3000/login
+
+**Logout Route**: http://localhost:3000/logout
+
+**Advertisements list page**: http://localhost:3000/adverts/ (Demo Page) -- Privated you have to login to can see the demo
+
+
+## Routes - API
 
 **API basic route**: http://localhost:3000/api/v1/advertisements
+
+**API JWT authentication**: http://localhost/api/v1/users/authenticate
 
 
 ## Detailed Documentation
@@ -75,10 +89,13 @@ The API provides the following services:
 - [**List of advertisements** (paginated, with search filters)](https://github.com/noemenend/Nodepop/wiki/List-of-Advertisements)
 - [**Create New Advertisements**](https://github.com/noemenend/Nodepop/wiki/Create-New-Advertisements)
 - [**List of existing tags** (advertisement's categories)](https://github.com/noemenend/Nodepop/wiki/List-of-existing-tags)
+- [**JWT Authentication** (jwt authentication for use the api)](https://github.com/noemenend/Nodepop/wiki/List-of-existing-tags)
+
 
 ## Changelog
 
 * 0.0.1: start
+* 1.0.0: Adding Internationalization, JWT Authentication & background task to upload the thumbnails of the adverts images.
 
 
 ## Author
