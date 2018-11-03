@@ -37,7 +37,12 @@ You can install the default data:
 ```Bash
 	$ npm run installDB
 ```
-
+The default data loaded into the database is several adverts and a user for the API Authentication.
+	* Name:Administrador
+	* email:noeliamm@gmail.com
+	* password:1234 (This key will be stored encrypted with a hash.)
+	
+	
 ### Run the application
 
 - On Development mode:
@@ -79,6 +84,10 @@ Once running, copy .env.example to .env and review the values.
 
 **API JWT authentication**: http://localhost/api/v1/users/authenticate
 
+## Internationalization
+
+The Nodepop web is multi-language. The available languages are English (EN) and Spanish (ES).
+The user can change the language whith a multi-language selector available in the Web menu.
 
 ## Detailed Documentation
 For more information see the project [wiki] (https://github.com/noemenend/Nodepop/wiki) 
