@@ -99,7 +99,7 @@ The API provides the following services:
 - [**List of advertisements** (paginated, with search filters)](https://github.com/noemenend/Nodepop/wiki/List-of-Advertisements)
 - [**Create New Advertisements**](https://github.com/noemenend/Nodepop/wiki/Create-New-Advertisements)
 - [**List of existing tags** (advertisement's categories)](https://github.com/noemenend/Nodepop/wiki/List-of-existing-tags)
-- [**JWT Authentication** (jwt authentication for use the api)](https://github.com/noemenend/Nodepop/wiki/List-of-existing-tags)
+- [**JWT Authentication** (jwt authentication for use the api)](https://github.com/noemenend/Nodepop/wiki/API-JWT-Authentication)
 
 
 ## Changelog
